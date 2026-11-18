@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\zakar\\source\\repos\\BankSim\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|c:\\users\\zakar\\source\\repos\\banksim\\banksim\\views\\transferpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|solutionrelative:banksim\\views\\transferpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|c:\\users\\zakar\\source\\repos\\banksim\\banksim\\views\\transferpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|solutionrelative:banksim\\views\\transferpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|c:\\users\\zakar\\source\\repos\\banksim\\banksim\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|solutionrelative:banksim\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|c:\\users\\zakar\\source\\repos\\banksim\\banksim\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|solutionrelative:banksim\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|c:\\users\\zakar\\source\\repos\\banksim\\banksim\\services\\bankservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|solutionrelative:banksim\\services\\bankservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|c:\\users\\zakar\\source\\repos\\banksim\\banksim\\services\\statsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|solutionrelative:banksim\\services\\statsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|c:\\users\\zakar\\source\\repos\\banksim\\banksim\\viewmodels\\transferviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|solutionrelative:banksim\\viewmodels\\transferviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|c:\\users\\zakar\\source\\repos\\banksim\\banksim\\data\\bankdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|solutionrelative:banksim\\data\\bankdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|c:\\users\\zakar\\source\\repos\\banksim\\banksim\\models\\entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D335139-2D75-47E0-9646-EB343D3553F3}|BankSim\\BankSim.csproj|solutionrelative:banksim\\models\\entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TransferPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Views\\TransferPage.xaml.cs",
+              "RelativeDocumentMoniker": "BankSim\\Views\\TransferPage.xaml.cs",
+              "ToolTip": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Views\\TransferPage.xaml.cs",
+              "RelativeToolTip": "BankSim\\Views\\TransferPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T21:03:39.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TransferPage.xaml",
+              "DocumentMoniker": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Views\\TransferPage.xaml",
+              "RelativeDocumentMoniker": "BankSim\\Views\\TransferPage.xaml",
+              "ToolTip": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Views\\TransferPage.xaml",
+              "RelativeToolTip": "BankSim\\Views\\TransferPage.xaml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwB8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-18T21:03:33.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StatsService.cs",
+              "DocumentMoniker": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Services\\StatsService.cs",
+              "RelativeDocumentMoniker": "BankSim\\Services\\StatsService.cs",
+              "ToolTip": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Services\\StatsService.cs",
+              "RelativeToolTip": "BankSim\\Services\\StatsService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowDMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T20:52:26.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BankService.cs",
+              "DocumentMoniker": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Services\\BankService.cs",
+              "RelativeDocumentMoniker": "BankSim\\Services\\BankService.cs",
+              "ToolTip": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Services\\BankService.cs",
+              "RelativeToolTip": "BankSim\\Services\\BankService.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAowK4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T20:52:04.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "BankSim\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Services\\AuthService.cs",
+              "RelativeToolTip": "BankSim\\Services\\AuthService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowDoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T20:51:50.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TransferViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\ViewModels\\TransferViewModel.cs",
+              "RelativeDocumentMoniker": "BankSim\\ViewModels\\TransferViewModel.cs",
+              "ToolTip": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\ViewModels\\TransferViewModel.cs",
+              "RelativeToolTip": "BankSim\\ViewModels\\TransferViewModel.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAowEUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T20:52:50.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "BankSim\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\MauiProgram.cs",
+              "RelativeToolTip": "BankSim\\MauiProgram.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAkwBYAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T20:55:01.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BankDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Data\\BankDbContext.cs",
+              "RelativeDocumentMoniker": "BankSim\\Data\\BankDbContext.cs",
+              "ToolTip": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Data\\BankDbContext.cs",
+              "RelativeToolTip": "BankSim\\Data\\BankDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T20:51:33.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Entities.cs",
+              "DocumentMoniker": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Models\\Entities.cs",
+              "RelativeDocumentMoniker": "BankSim\\Models\\Entities.cs",
+              "ToolTip": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\Models\\Entities.cs",
+              "RelativeToolTip": "BankSim\\Models\\Entities.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T20:50:44.615Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

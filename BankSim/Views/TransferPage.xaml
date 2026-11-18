@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BankSim.Views.TransferPage"
+             Title="Virement">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="14">
+
+            <Label Text="Compte source" FontAttributes="Bold" />
+            <Picker ItemsSource="{Binding Accounts}"
+                    SelectedItem="{Binding SelectedAccount}" />
+
+            <Label Text="IBAN du destinataire" FontAttributes="Bold" />
+            <Entry Text="{Binding DestinationIban}" Placeholder="TN59..." />
+
+            <Label Text="Montant" FontAttributes="Bold" />
+            <Entry Text="{Binding AmountText}" Keyboard="Numeric" Placeholder="0.00" />
+
+            <Label Text="Catégorie" FontAttributes="Bold" />
+            <Picker ItemsSource="{Binding Categories}"
+                    SelectedItem="{Binding SelectedCategory}" />
+
+            <Label Text="Description" FontAttributes="Bold" />
+            <Entry Text="{Binding Description}" Placeholder="Optionnel" />
+
+            <Button Text="Envoyer" Command="{Binding TransferCommand}" />
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            <Label Text="{Binding Message}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
