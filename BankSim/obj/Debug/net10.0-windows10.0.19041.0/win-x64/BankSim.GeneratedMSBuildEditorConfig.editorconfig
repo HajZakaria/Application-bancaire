@@ -124,6 +124,16 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
+[D:/3eme anne/cross platform/application-bancaire/Application-bancaire/BankSim/Views/StatsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BankSim.Views.StatsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\StatsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\StatsPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
 [D:/3eme anne/cross platform/application-bancaire/Application-bancaire/BankSim/Views/TransferPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BankSim.Views.TransferPage.xaml

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:BankSim.ViewModels"
+             x:Class="BankSim.Views.StatsPage"
+             x:DataType="vm:StatsViewModel"
+             Title="Statistiques">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="14" MaximumWidthRequest="700">
+
+            <Picker Title="Compte"
+                    ItemsSource="{Binding Accounts}"
+                    SelectedItem="{Binding SelectedAccount}" />
+
+            <Label Text="{Binding Message}" TextColor="Red" />
+
+            <!-- Dépenses par catégorie -->
+            <Border Padding="16" StrokeShape="RoundRectangle 10" Stroke="{StaticResource Gray300}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Dépenses par catégorie (ce mois)"
+                           FontSize="18" FontAttributes="Bold" />
+                    <Label Text="{Binding MonthTotalText}" />
+                    <Label Text="Aucune dépense ce mois-ci."
+                           IsVisible="{Binding HasNoSpending}" />
+
+                    <VerticalStackLayout Spacing="10" BindableLayout.ItemsSource="{Binding Categories}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="vm:CategoryRow">
+                                <VerticalStackLayout Spacing="4">
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" />
+                                        <Label Grid.Column="1" Text="{Binding AmountText}" />
+                                    </Grid>
+                                    <ProgressBar Progress="{Binding Progress}"
+                                                 ProgressColor="{StaticResource Primary}" />
+                                </VerticalStackLayout>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Entrées / sorties par mois -->
+            <Border Padding="16" StrokeShape="RoundRectangle 10" Stroke="{StaticResource Gray300}">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Entrées / sorties (6 derniers mois)"
+                           FontSize="18" FontAttributes="Bold" />
+
+                    <VerticalStackLayout Spacing="14" BindableLayout.ItemsSource="{Binding Months}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="vm:MonthRow">
+                                <VerticalStackLayout Spacing="4">
+                                    <Label Text="{Binding MonthName}" FontAttributes="Bold" />
+
+                                    <Grid ColumnDefinitions="*,130" ColumnSpacing="10">
+                                        <ProgressBar Progress="{Binding IncomeProgress}"
+                                                     ProgressColor="Green" VerticalOptions="Center" />
+                                        <Label Grid.Column="1" Text="{Binding IncomeText}"
+                                               TextColor="Green" HorizontalTextAlignment="End" />
+                                    </Grid>
+
+                                    <Grid ColumnDefinitions="*,130" ColumnSpacing="10">
+                                        <ProgressBar Progress="{Binding ExpensesProgress}"
+                                                     ProgressColor="Red" VerticalOptions="Center" />
+                                        <Label Grid.Column="1" Text="{Binding ExpensesText}"
+                                               TextColor="Red" HorizontalTextAlignment="End" />
+                                    </Grid>
+                                </VerticalStackLayout>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
