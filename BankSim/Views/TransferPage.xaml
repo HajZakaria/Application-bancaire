@@ -2,31 +2,133 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BankSim.Views.TransferPage"
-             Title="Virement">
+             Title="Virement"
+             BackgroundColor="#F4F6FA"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="#1B2540" />
+            <Setter Property="PlaceholderColor" Value="#8A94A8" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+
+        <Style TargetType="Picker">
+            <Setter Property="TextColor" Value="#1B2540" />
+            <Setter Property="TitleColor" Value="#8A94A8" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+
+        <Style x:Key="FieldLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="#5B6780" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="Margin" Value="4,6,0,0" />
+        </Style>
+
+        <Style x:Key="FieldBox" TargetType="Border">
+            <Setter Property="BackgroundColor" Value="#F4F6FA" />
+            <Setter Property="Stroke" Value="#E1E6EF" />
+            <Setter Property="StrokeThickness" Value="1" />
+            <Setter Property="Padding" Value="12,2" />
+            <Setter Property="StrokeShape" Value="RoundRectangle 12" />
+        </Style>
+    </ContentPage.Resources>
+
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="14">
+        <VerticalStackLayout Spacing="0">
 
-            <Label Text="Compte source" FontAttributes="Bold" />
-            <Picker ItemsSource="{Binding Accounts}"
-                    SelectedItem="{Binding SelectedAccount}" />
+            <!-- En-tête -->
+            <Border BackgroundColor="#14213D"
+                    StrokeThickness="0"
+                    Padding="24,40,24,36"
+                    StrokeShape="RoundRectangle 0,0,28,28">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Virement"
+                           TextColor="White"
+                           FontSize="26"
+                           FontAttributes="Bold" />
+                    <Label Text="Solde disponible"
+                           TextColor="#A9B4CC"
+                           FontSize="13"
+                           Margin="0,14,0,0" />
+                    <HorizontalStackLayout Spacing="8">
+                        <Label Text="{Binding SelectedAccount.Balance, StringFormat='{0:N2}'}"
+                               TextColor="White"
+                               FontSize="34"
+                               FontAttributes="Bold" />
+                        <Label Text="{Binding SelectedAccount.Currency}"
+                               TextColor="#19B5A5"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               VerticalOptions="End"
+                               Margin="0,0,0,6" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
 
-            <Label Text="IBAN du destinataire" FontAttributes="Bold" />
-            <Entry Text="{Binding DestinationIban}" Placeholder="TN59..." />
+            <!-- Carte du formulaire -->
+            <Border BackgroundColor="White"
+                    Stroke="#E1E6EF"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="20"
+                    Margin="20,-18,20,24">
+                <VerticalStackLayout Spacing="8">
 
-            <Label Text="Montant" FontAttributes="Bold" />
-            <Entry Text="{Binding AmountText}" Keyboard="Numeric" Placeholder="0.00" />
+                    <Label Text="Compte source" Style="{StaticResource FieldLabel}" />
+                    <Border Style="{StaticResource FieldBox}">
+                        <Picker ItemsSource="{Binding Accounts}"
+                                SelectedItem="{Binding SelectedAccount}"
+                                Title="Choisir un compte" />
+                    </Border>
 
-            <Label Text="Catégorie" FontAttributes="Bold" />
-            <Picker ItemsSource="{Binding Categories}"
-                    SelectedItem="{Binding SelectedCategory}" />
+                    <Label Text="IBAN du destinataire" Style="{StaticResource FieldLabel}" />
+                    <Border Style="{StaticResource FieldBox}">
+                        <Entry Text="{Binding DestinationIban}" Placeholder="TN59..." />
+                    </Border>
 
-            <Label Text="Description" FontAttributes="Bold" />
-            <Entry Text="{Binding Description}" Placeholder="Optionnel" />
+                    <Label Text="Montant" Style="{StaticResource FieldLabel}" />
+                    <Border Style="{StaticResource FieldBox}">
+                        <Entry Text="{Binding AmountText}"
+                               Keyboard="Numeric"
+                               Placeholder="0.00" />
+                    </Border>
 
-            <Button Text="Envoyer" Command="{Binding TransferCommand}" />
+                    <Label Text="Catégorie" Style="{StaticResource FieldLabel}" />
+                    <Border Style="{StaticResource FieldBox}">
+                        <Picker ItemsSource="{Binding Categories}"
+                                SelectedItem="{Binding SelectedCategory}" />
+                    </Border>
 
-            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
-            <Label Text="{Binding Message}" />
+                    <Label Text="Description" Style="{StaticResource FieldLabel}" />
+                    <Border Style="{StaticResource FieldBox}">
+                        <Entry Text="{Binding Description}" Placeholder="Optionnel" />
+                    </Border>
+
+                    <Button Text="Envoyer le virement"
+                            Command="{Binding TransferCommand}"
+                            BackgroundColor="#19B5A5"
+                            TextColor="White"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            CornerRadius="14"
+                            HeightRequest="52"
+                            Margin="0,16,0,0" />
+
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                       IsVisible="{Binding IsBusy}"
+                                       Color="#19B5A5" />
+
+                    <Label Text="{Binding Message}"
+                           TextColor="#5B6780"
+                           HorizontalTextAlignment="Center"
+                           FontSize="14" />
+                </VerticalStackLayout>
+            </Border>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

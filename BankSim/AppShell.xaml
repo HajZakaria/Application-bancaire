@@ -20,7 +20,7 @@
         <ShellContent Title="Historique"
               Route="history"
               ContentTemplate="{DataTemplate views:HistoryPage}" />
-        <ShellContent Title="Statistiques"
+        <ShellContent Title="Flux d'activité"
               Route="stats"
               ContentTemplate="{DataTemplate views:StatsPage}" />
     </TabBar>

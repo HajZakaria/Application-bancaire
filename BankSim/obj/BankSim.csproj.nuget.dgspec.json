@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\3eme anne\\cross platform\\application-bancaire\\Application-bancaire\\BankSim\\BankSim.csproj": {}
+    "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\BankSim.csproj": {}
   },
   "projects": {
-    "D:\\3eme anne\\cross platform\\application-bancaire\\Application-bancaire\\BankSim\\BankSim.csproj": {
+    "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\BankSim.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\3eme anne\\cross platform\\application-bancaire\\Application-bancaire\\BankSim\\BankSim.csproj",
+        "projectUniqueName": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\BankSim.csproj",
         "projectName": "BankSim",
-        "projectPath": "D:\\3eme anne\\cross platform\\application-bancaire\\Application-bancaire\\BankSim\\BankSim.csproj",
-        "packagesPath": "C:\\Users\\knawa\\.nuget\\packages\\",
-        "outputPath": "D:\\3eme anne\\cross platform\\application-bancaire\\Application-bancaire\\BankSim\\obj\\",
+        "projectPath": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\BankSim.csproj",
+        "packagesPath": "C:\\Users\\zakar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zakar\\source\\repos\\BankSim\\BankSim\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\knawa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zakar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

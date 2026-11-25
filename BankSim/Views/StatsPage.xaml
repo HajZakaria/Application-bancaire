@@ -4,73 +4,101 @@
              xmlns:vm="clr-namespace:BankSim.ViewModels"
              x:Class="BankSim.Views.StatsPage"
              x:DataType="vm:StatsViewModel"
-             Title="Statistiques">
+             Title="Flux d'activités"
+             Shell.NavBarIsVisible="False">
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="14" MaximumWidthRequest="700">
+        <VerticalStackLayout>
 
-            <Picker Title="Compte"
-                    ItemsSource="{Binding Accounts}"
-                    SelectedItem="{Binding SelectedAccount}" />
-
-            <Label Text="{Binding Message}" TextColor="Red" />
-
-            <!-- Dépenses par catégorie -->
-            <Border Padding="16" StrokeShape="RoundRectangle 10" Stroke="{StaticResource Gray300}">
-                <VerticalStackLayout Spacing="10">
-                    <Label Text="Dépenses par catégorie (ce mois)"
-                           FontSize="18" FontAttributes="Bold" />
-                    <Label Text="{Binding MonthTotalText}" />
-                    <Label Text="Aucune dépense ce mois-ci."
-                           IsVisible="{Binding HasNoSpending}" />
-
-                    <VerticalStackLayout Spacing="10" BindableLayout.ItemsSource="{Binding Categories}">
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate x:DataType="vm:CategoryRow">
-                                <VerticalStackLayout Spacing="4">
-                                    <Grid ColumnDefinitions="*,Auto">
-                                        <Label Text="{Binding Name}" FontAttributes="Bold" />
-                                        <Label Grid.Column="1" Text="{Binding AmountText}" />
-                                    </Grid>
-                                    <ProgressBar Progress="{Binding Progress}"
-                                                 ProgressColor="{StaticResource Primary}" />
-                                </VerticalStackLayout>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </VerticalStackLayout>
+            <!-- En-tête -->
+            <Border Style="{StaticResource HeaderBox}">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Flux d'activité" Style="{StaticResource HeaderTitle}" />
+                    <Label Text="Vos dépenses et vos flux d'argent"
+                           Style="{StaticResource HeaderSubtitle}" />
                 </VerticalStackLayout>
             </Border>
 
-            <!-- Entrées / sorties par mois -->
-            <Border Padding="16" StrokeShape="RoundRectangle 10" Stroke="{StaticResource Gray300}">
-                <VerticalStackLayout Spacing="12">
-                    <Label Text="Entrées / sorties (6 derniers mois)"
-                           FontSize="18" FontAttributes="Bold" />
+            <VerticalStackLayout Margin="20,-18,20,24" Spacing="14" MaximumWidthRequest="700">
 
-                    <VerticalStackLayout Spacing="14" BindableLayout.ItemsSource="{Binding Months}">
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate x:DataType="vm:MonthRow">
-                                <VerticalStackLayout Spacing="4">
-                                    <Label Text="{Binding MonthName}" FontAttributes="Bold" />
-
-                                    <Grid ColumnDefinitions="*,130" ColumnSpacing="10">
-                                        <ProgressBar Progress="{Binding IncomeProgress}"
-                                                     ProgressColor="Green" VerticalOptions="Center" />
-                                        <Label Grid.Column="1" Text="{Binding IncomeText}"
-                                               TextColor="Green" HorizontalTextAlignment="End" />
-                                    </Grid>
-
-                                    <Grid ColumnDefinitions="*,130" ColumnSpacing="10">
-                                        <ProgressBar Progress="{Binding ExpensesProgress}"
-                                                     ProgressColor="Red" VerticalOptions="Center" />
-                                        <Label Grid.Column="1" Text="{Binding ExpensesText}"
-                                               TextColor="Red" HorizontalTextAlignment="End" />
-                                    </Grid>
-                                </VerticalStackLayout>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
+                <!-- Choix du compte -->
+                <Border Style="{StaticResource Card}">
+                    <VerticalStackLayout Spacing="8">
+                        <Border Style="{StaticResource FieldBox}">
+                            <Picker Title="Compte"
+                                    ItemsSource="{Binding Accounts}"
+                                    SelectedItem="{Binding SelectedAccount}" />
+                        </Border>
+                        <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" />
                     </VerticalStackLayout>
-                </VerticalStackLayout>
-            </Border>
+                </Border>
+
+                <!-- Dépenses par catégorie -->
+                <Border Style="{StaticResource Card}">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Dépenses par catégorie (ce mois)"
+                               Style="{StaticResource SectionTitle}" />
+                        <Label Text="{Binding MonthTotalText}"
+                               TextColor="{StaticResource Muted}" />
+                        <Label Text="Aucune dépense ce mois-ci."
+                               TextColor="{StaticResource Muted}"
+                               IsVisible="{Binding HasNoSpending}" />
+
+                        <VerticalStackLayout Spacing="12"
+                                             BindableLayout.ItemsSource="{Binding Categories}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="vm:CategoryRow">
+                                    <VerticalStackLayout Spacing="4">
+                                        <Grid ColumnDefinitions="*,Auto">
+                                            <Label Text="{Binding Name}" FontAttributes="Bold" />
+                                            <Label Grid.Column="1" Text="{Binding AmountText}"
+                                                   TextColor="{StaticResource Muted}" />
+                                        </Grid>
+                                        <ProgressBar Progress="{Binding Progress}"
+                                                     ProgressColor="{StaticResource Teal}" />
+                                    </VerticalStackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Entrées / sorties par mois -->
+                <Border Style="{StaticResource Card}">
+                    <VerticalStackLayout Spacing="12">
+                        <Label Text="Entrées / sorties (6 derniers mois)"
+                               Style="{StaticResource SectionTitle}" />
+
+                        <VerticalStackLayout Spacing="14"
+                                             BindableLayout.ItemsSource="{Binding Months}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="vm:MonthRow">
+                                    <VerticalStackLayout Spacing="4">
+                                        <Label Text="{Binding MonthName}" FontAttributes="Bold" />
+
+                                        <Grid ColumnDefinitions="*,130" ColumnSpacing="10">
+                                            <ProgressBar Progress="{Binding IncomeProgress}"
+                                                         ProgressColor="{StaticResource Success}"
+                                                         VerticalOptions="Center" />
+                                            <Label Grid.Column="1" Text="{Binding IncomeText}"
+                                                   TextColor="{StaticResource Success}"
+                                                   HorizontalTextAlignment="End" />
+                                        </Grid>
+
+                                        <Grid ColumnDefinitions="*,130" ColumnSpacing="10">
+                                            <ProgressBar Progress="{Binding ExpensesProgress}"
+                                                         ProgressColor="{StaticResource Danger}"
+                                                         VerticalOptions="Center" />
+                                            <Label Grid.Column="1" Text="{Binding ExpensesText}"
+                                                   TextColor="{StaticResource Danger}"
+                                                   HorizontalTextAlignment="End" />
+                                        </Grid>
+                                    </VerticalStackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

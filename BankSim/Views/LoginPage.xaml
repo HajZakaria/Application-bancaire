@@ -7,33 +7,50 @@
              Title="Connexion"
              Shell.NavBarIsVisible="False">
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="14"
-                             MaximumWidthRequest="420"
-                             VerticalOptions="Center">
+        <VerticalStackLayout>
 
-            <Label Text="BankSim" FontSize="32" FontAttributes="Bold"
-                   HorizontalOptions="Center" />
-            <Label Text="Connectez-vous à votre compte"
-                   HorizontalOptions="Center" Margin="0,0,0,10" />
+            <!-- En-tête -->
+            <Border Style="{StaticResource HeaderBox}" Padding="24,64,24,48">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="BankSim" Style="{StaticResource HeaderTitle}"
+                           FontSize="34" HorizontalOptions="Center" />
+                    <Label Text="Connectez-vous à votre compte"
+                           Style="{StaticResource HeaderSubtitle}"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
 
-            <Label Text="Email" FontAttributes="Bold" />
-            <Entry Text="{Binding Email}" Keyboard="Email"
-                   Placeholder="exemple@mail.com" />
+            <!-- Formulaire -->
+            <Border Style="{StaticResource Card}" Margin="20,-18,20,24"
+                    MaximumWidthRequest="420">
+                <VerticalStackLayout Spacing="8">
 
-            <Label Text="Mot de passe" FontAttributes="Bold" />
-            <Entry Text="{Binding Password}" IsPassword="True"
-                   Placeholder="••••••••" />
+                    <Label Text="Email" Style="{StaticResource FieldLabel}" />
+                    <Border Style="{StaticResource FieldBox}">
+                        <Entry Text="{Binding Email}" Keyboard="Email"
+                               Placeholder="exemple@mail.com" />
+                    </Border>
 
-            <Button Text="Se connecter" Command="{Binding LoginCommand}" />
+                    <Label Text="Mot de passe" Style="{StaticResource FieldLabel}" />
+                    <Border Style="{StaticResource FieldBox}">
+                        <Entry Text="{Binding Password}" IsPassword="True"
+                               Placeholder="••••••••" />
+                    </Border>
 
-            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
-            <Label Text="{Binding Message}" TextColor="Red"
-                   HorizontalOptions="Center" />
+                    <Button Text="Se connecter" Command="{Binding LoginCommand}"
+                            Style="{StaticResource PrimaryButton}"
+                            Margin="0,16,0,0" />
 
-            <Button Text="Pas de compte ? S'inscrire"
-                    Command="{Binding GoToRegisterCommand}"
-                    BackgroundColor="Transparent"
-                    TextColor="{StaticResource Primary}" />
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                       IsVisible="{Binding IsBusy}"
+                                       Color="{StaticResource Teal}" />
+                    <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" />
+
+                    <Button Text="Pas de compte ? S'inscrire"
+                            Command="{Binding GoToRegisterCommand}"
+                            Style="{StaticResource LinkButton}" />
+                </VerticalStackLayout>
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
