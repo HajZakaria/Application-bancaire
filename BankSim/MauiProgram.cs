@@ -29,6 +29,14 @@ public static class MauiProgram
 
         builder.Services.AddTransient<TransferViewModel>();
         builder.Services.AddTransient<TransferPage>();
+        builder.Services.AddTransient<LoginViewModel>();
+        builder.Services.AddTransient<LoginPage>();
+        builder.Services.AddTransient<RegisterViewModel>();
+        builder.Services.AddTransient<RegisterPage>();
+        builder.Services.AddTransient<AccountsViewModel>();
+        builder.Services.AddTransient<AccountsPage>();
+        builder.Services.AddTransient<HistoryViewModel>();
+        builder.Services.AddTransient<HistoryPage>();
 
 #if DEBUG
         builder.Logging.AddDebug();

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:BankSim.ViewModels"
+             xmlns:models="clr-namespace:BankSim.Models"
+             x:Class="BankSim.Views.AccountsPage"
+             x:DataType="vm:AccountsViewModel"
+             Title="Mes comptes">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="14" MaximumWidthRequest="700">
+
+            <!-- En-tête -->
+            <Grid ColumnDefinitions="*,Auto">
+                <Label Text="{Binding Greeting}" FontSize="22" FontAttributes="Bold"
+                       VerticalOptions="Center" />
+                <Button Grid.Column="1" Text="Déconnexion"
+                        Command="{Binding LogoutCommand}" />
+            </Grid>
+
+            <Label Text="{Binding TotalBalance, StringFormat='Solde total : {0:N2} TND'}"
+                   FontSize="18" />
+
+            <!-- Liste des comptes -->
+            <Label Text="Mes comptes" FontSize="18" FontAttributes="Bold" />
+            <Label Text="Aucun compte pour l'instant. Créez-en un ci-dessous."
+                   IsVisible="{Binding HasNoAccounts}" />
+
+            <VerticalStackLayout Spacing="8" BindableLayout.ItemsSource="{Binding Accounts}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:Account">
+                        <Border Padding="14" StrokeShape="RoundRectangle 10"
+                                Stroke="{StaticResource Gray300}">
+                            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                                <Label Text="{Binding Type}" FontAttributes="Bold" />
+                                <!-- Entry en lecture seule : permet de copier l'IBAN -->
+                                <Entry Grid.Row="1" Text="{Binding Iban}" IsReadOnly="True"
+                                       FontSize="12" />
+                                <Label Grid.Column="1" Grid.RowSpan="2"
+                                       Text="{Binding Balance, StringFormat='{0:N2} TND'}"
+                                       FontSize="18" FontAttributes="Bold"
+                                       VerticalOptions="Center" Margin="10,0,0,0" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+            <!-- Nouveau compte -->
+            <Border Padding="16" StrokeShape="RoundRectangle 10" Stroke="{StaticResource Gray300}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Ouvrir un compte" FontSize="18" FontAttributes="Bold" />
+                    <Picker Title="Type de compte"
+                            ItemsSource="{Binding AccountTypes}"
+                            SelectedItem="{Binding NewAccountType}" />
+                    <Entry Text="{Binding InitialDepositText}" Keyboard="Numeric"
+                           Placeholder="Dépôt initial (optionnel)" />
+                    <Button Text="Créer le compte" Command="{Binding CreateAccountCommand}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Dépôt / Retrait -->
+            <Border Padding="16" StrokeShape="RoundRectangle 10" Stroke="{StaticResource Gray300}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Dépôt / Retrait" FontSize="18" FontAttributes="Bold" />
+                    <Picker Title="Compte"
+                            ItemsSource="{Binding Accounts}"
+                            SelectedItem="{Binding SelectedAccount}" />
+                    <Entry Text="{Binding AmountText}" Keyboard="Numeric" Placeholder="Montant" />
+                    <Picker Title="Catégorie"
+                            ItemsSource="{Binding Categories}"
+                            SelectedItem="{Binding SelectedCategory}" />
+                    <Entry Text="{Binding Description}" Placeholder="Description (optionnel)" />
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <Button Text="Déposer" Command="{Binding DepositCommand}" />
+                        <Button Grid.Column="1" Text="Retirer" Command="{Binding WithdrawCommand}" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            <Label Text="{Binding Message}" HorizontalOptions="Center" FontAttributes="Bold" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

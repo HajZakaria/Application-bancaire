@@ -3,12 +3,23 @@
     x:Class="BankSim.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:BankSim"
-    Title="BankSim">
+    xmlns:views="clr-namespace:BankSim.Views"
+    Title="BankSim"
+    Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellContent Route="login"
+                  ContentTemplate="{DataTemplate views:LoginPage}" />
+
+    <TabBar Route="main">
+        <ShellContent Title="Comptes"
+                  Route="accounts"
+                  ContentTemplate="{DataTemplate views:AccountsPage}" />
+        <ShellContent Title="Virement"
+                  Route="transfer"
+                  ContentTemplate="{DataTemplate views:TransferPage}" />
+        <ShellContent Title="Historique"
+              Route="history"
+              ContentTemplate="{DataTemplate views:HistoryPage}" />
+    </TabBar>
 
 </Shell>
