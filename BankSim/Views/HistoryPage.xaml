@@ -6,9 +6,9 @@
              x:DataType="vm:HistoryViewModel"
              Title="Historique"
              Shell.NavBarIsVisible="False">
-    <Grid RowDefinitions="Auto,*">
-
+    <ScrollView>
         <VerticalStackLayout>
+
             <!-- En-tête -->
             <Border Style="{StaticResource HeaderBox}">
                 <VerticalStackLayout Spacing="6">
@@ -18,47 +18,50 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- Choix du compte -->
-            <Border Style="{StaticResource Card}" Margin="20,-18,20,12"
-                    MaximumWidthRequest="700">
-                <VerticalStackLayout Spacing="8">
-                    <Border Style="{StaticResource FieldBox}">
-                        <Picker Title="Compte"
-                                ItemsSource="{Binding Accounts}"
-                                SelectedItem="{Binding SelectedAccount}" />
-                    </Border>
-                    <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" />
+            <VerticalStackLayout Margin="20,-18,20,24" Spacing="12" MaximumWidthRequest="700">
+
+                <!-- Choix du compte -->
+                <Border Style="{StaticResource Card}">
+                    <VerticalStackLayout Spacing="8">
+                        <Border Style="{StaticResource FieldBox}">
+                            <Picker Title="Compte"
+                                    ItemsSource="{Binding Accounts}"
+                                    SelectedItem="{Binding SelectedAccount}" />
+                        </Border>
+                        <Label Text="{Binding Message}" Style="{StaticResource ErrorLabel}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Liste des transactions -->
+                <VerticalStackLayout Spacing="10" BindableLayout.ItemsSource="{Binding Rows}">
+
+                    <BindableLayout.EmptyView>
+                        <Label Text="Aucune transaction pour ce compte."
+                               TextColor="{StaticResource Muted}"
+                               HorizontalOptions="Center" Margin="0,30" />
+                    </BindableLayout.EmptyView>
+
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="vm:TransactionRow">
+                            <Border Style="{StaticResource Card}" Padding="16">
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10"
+                                      RowDefinitions="Auto,Auto,Auto">
+                                    <Label Text="{Binding Title}" FontAttributes="Bold" />
+                                    <Label Grid.Row="1" Text="{Binding Details}" FontSize="13"
+                                           TextColor="{StaticResource Muted}" />
+                                    <Label Grid.Row="2" Text="{Binding DateText}" FontSize="12"
+                                           TextColor="{StaticResource Muted}" />
+                                    <Label Grid.Column="1" Grid.RowSpan="3"
+                                           Text="{Binding AmountText}"
+                                           TextColor="{Binding AmountColor}"
+                                           FontSize="17" FontAttributes="Bold"
+                                           VerticalOptions="Center" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
                 </VerticalStackLayout>
-            </Border>
+            </VerticalStackLayout>
         </VerticalStackLayout>
-
-        <!-- Liste des transactions -->
-        <CollectionView Grid.Row="1" ItemsSource="{Binding Rows}"
-                        Margin="20,0,20,16" MaximumWidthRequest="700">
-            <CollectionView.EmptyView>
-                <Label Text="Aucune transaction pour ce compte."
-                       TextColor="{StaticResource Muted}"
-                       HorizontalOptions="Center" Margin="0,30" />
-            </CollectionView.EmptyView>
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="vm:TransactionRow">
-                    <Border Style="{StaticResource Card}" Padding="16" Margin="0,0,0,10">
-                        <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto">
-                            <Label Text="{Binding Title}" FontAttributes="Bold" />
-                            <Label Grid.Row="1" Text="{Binding Details}" FontSize="13"
-                                   TextColor="{StaticResource Muted}" />
-                            <Label Grid.Row="2" Text="{Binding DateText}" FontSize="12"
-                                   TextColor="{StaticResource Muted}" />
-                            <Label Grid.Column="1" Grid.RowSpan="3"
-                                   Text="{Binding AmountText}"
-                                   TextColor="{Binding AmountColor}"
-                                   FontSize="17" FontAttributes="Bold"
-                                   VerticalOptions="Center" />
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </Grid>
+    </ScrollView>
 </ContentPage>

@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BankSim")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0a2df3725a1cf68e9c671644e5214d0f3efe27e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+2ec0ac5d40b11e2ca61a81c3c0c56c71c520a8e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("BankSim")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BankSim")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
